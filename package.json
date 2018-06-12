@@ -9,10 +9,8 @@
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
     "ionic:serve": "ionic-app-scripts serve",
-
     "android:add": "cordova platform add android",
-
-    "ios:add": "cordova platform add ios",
+    "ios:add": "cordova platform add ios"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
