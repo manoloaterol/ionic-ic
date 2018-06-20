@@ -1,5 +1,5 @@
 {
-    "name": "GeneraliBoilerplate",
+    "name": "Generali",
     "version": "0.0.1",
     "author": "Generali",
     "private": true,
@@ -12,9 +12,11 @@
         "android:add": "cordova platform add android",
         "android:build:usu": "bnr android:build:usu",
         "android:build:pro": "bnr android:build:pro",
+        "android:sign": "bnr android:sign",
         "ios:add": "cordova platform add ios",
         "ios:build:usu": "bnr ios:build:usu",
         "ios:build:pro": "bnr ios:build:pro",
+        "ios:sign": "bnr ios:sign",
         "browser:add": "cordova platform add browser",
         "browser:build:pro": "bnr browser:pro"
     },
@@ -36,7 +38,8 @@
         "@ngx-translate/core": "8.0.0",
         "@ngx-translate/http-loader": "^2.0.0",
         "better-npm-run": "^0.1.0",
-        "cordova-android": "^7.0.0",
+        "cordova-android": "7.1.0",
+        "cordova-ios": "^4.5.4",
         "cordova-plugin-device": "^2.0.2",
         "cordova-plugin-ionic-keyboard": "^2.0.5",
         "cordova-plugin-ionic-webview": "^1.1.19",
@@ -45,7 +48,9 @@
         "ionic-angular": "3.9.2",
         "ionicons": "3.0.0",
         "rxjs": "5.5.11",
+        "shelljs": "^0.8.2",
         "sw-toolbox": "3.6.0",
+        "webpack": "^4.12.0",
         "zone.js": "0.8.26"
     },
     "devDependencies": {
@@ -68,6 +73,12 @@
                 "PLATFORM": "android"
             }
         },
+        "android:sign": {
+            "command": "node ./config/sign-android",
+            "env": {
+                "PLATFORM": "android"
+            }
+        },
         "ios:build:usu": {
             "command": "ionic cordova build ios --prod",
             "env": {
@@ -82,6 +93,12 @@
                 "PLATFORM": "ios"
             }
         },
+        "ios:sign": {
+            "command": "node ./config/sign-ios",
+            "env": {
+                "PLATFORM": "ios"
+            }
+        },
         "browser:build:pro": {
             "command": "ionic cordova build browser --prod && node ./config/cacheBustCss",
             "env": {
@@ -89,6 +106,10 @@
                 "PLATFORM": "web"
             }
         }
+    },
+    "config": {
+        "ionic_source_map": "source-map",
+        "ionic_webpack": "./config/webpack.config.js"
     },
     "cordova": {
         "plugins": {
@@ -99,7 +120,8 @@
             "cordova-plugin-ionic-keyboard": {}
         },
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     }
 }
