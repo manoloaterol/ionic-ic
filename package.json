@@ -100,7 +100,7 @@
             }
         },
         "browser:build:pro": {
-            "command": "ionic cordova build browser --prod && node ./config/cacheBustCss",
+            "command": "ionic cordova build browser --prod",
             "env": {
                 "NODE_ENV": "tst",
                 "PLATFORM": "web"
