@@ -1,7 +1,7 @@
 {
     "name": "Generali",
     "version": "0.0.4",
-    "author": "Generali Boilerplate",
+    "author": "GeneraliBoilerplate",
     "private": true,
     "scripts": {
         "clean": "ionic-app-scripts clean",
